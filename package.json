@@ -1,0 +1,27 @@
+{
+  "name": "next-use-cart",
+  "version": "1.0.2",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "Cart",
+    "Market",
+    "ECommerce",
+    "Business",
+    "Next Cart",
+    "React Cart"
+  ],
+  "author": "Ahnaf",
+  "license": "ISC",
+  "description": "Next React Cart",
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.3"
+  }
+}
