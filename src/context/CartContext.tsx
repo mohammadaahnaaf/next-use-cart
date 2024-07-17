@@ -4,27 +4,24 @@ import { CartContextType, CartItem } from '../types/cart';
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-
     const [cart, setCart] = useState<CartItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
-    let totalUniqueItems = cart.length
-    let totalItems = cart.reduce((total, item) => total + item.qty, 0)
+    const totalUniqueItems = cart.length;
+    const totalItems = cart.reduce((total, item) => total + item.qty, 0);
 
     useEffect(() => {
-        setLoading(true)
+        setLoading(true);
         const storedCart = localStorage.getItem('cart');
         if (storedCart) {
             setCart(JSON.parse(storedCart));
         }
-        setLoading(false)
+        setLoading(false);
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
-            const newCart = JSON.stringify(cart)
-            localStorage.setItem('cart', newCart)
-        }, 250)
+        const newCart = JSON.stringify(cart);
+        localStorage.setItem('cart', newCart);
     }, [cart]);
 
     const addItem = (item: CartItem) => {
@@ -41,8 +38,8 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     };
 
     const emptyCart = () => {
-        setCart([])
-    }
+        setCart([]);
+    };
 
     const removeItem = (id: number | string) => {
         setCart(prevCart => prevCart.filter(item => item.id !== id));
