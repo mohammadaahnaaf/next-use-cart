@@ -43,7 +43,7 @@ export default MyApp;
 ## 2. useCart hook
 
 ```c
-import { useCart, CartItem } from 'react-use-cart';
+import { useCart, CartItem } from 'next-use-cart';
 
 const ItemList: React.FC = () => {
   const { addItem } = useCart();

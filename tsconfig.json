@@ -10,7 +10,10 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "next-use-cart/*": ["./src/*"]
+    }
   },
   "include": ["src"]
 }
